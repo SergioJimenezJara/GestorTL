@@ -1,0 +1,60 @@
+<div class="login-container">
+  <div class="login-left">
+    <h2>Hola! 👋</h2>
+    <p>Bienvenido al rincón de The Cataclysm!</p>
+    <button mat-raised-button class="btn btn-google">
+      <i class="fa fa-google"></i>
+      Inicia sesión con Google
+    </button>
+    <button mat-raised-button class="btn btn-apple">
+      <i class="fa fa-apple"></i>
+      Inicia sesión con Apple
+    </button>
+    <p>o conectate con tu Email</p>
+
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <mat-form-field appearance="fill">
+        <mat-label>Email</mat-label>
+        <input matInput formControlName="email" />
+        <!-- Mensajes de error -->
+        <mat-error *ngIf="loginForm.get('email')?.hasError('required')">
+          El correo es obligatorio.
+        </mat-error>
+        <mat-error *ngIf="loginForm.get('email')?.hasError('email')">
+          El correo no es válido.
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Contraseña</mat-label>
+        <input matInput type="password" formControlName="password" />
+        <!-- Mensajes de error -->
+        <mat-error *ngIf="loginForm.get('password')?.hasError('required')">
+          La contraseña es obligatoria.
+        </mat-error>
+        <mat-error *ngIf="loginForm.get('password')?.hasError('minlength')">
+          La contraseña debe tener al menos 6 caracteres.
+        </mat-error>
+      </mat-form-field>
+
+      <button mat-raised-button class="square-button">Acceder</button>
+    </form>
+
+    <p>¿Aún no tienes cuenta? <a href="#">Me la pela</a></p>
+  </div>
+  <div class="login-right">
+    <mat-card appearance="outlined" class="main-card">
+      <!-- TO-DO 001: -->
+      <!-- <mat-card appearance="outlined" class="info-card">
+        <mat-grid-list cols="5">
+          <mat-grid-tile *ngFor="let item of iconItems">
+            <mat-card class="icon-item">
+              <mat-icon class="icon">{{ item.icon }}</mat-icon>
+              <p>{{ item.text }}</p>
+            </mat-card>
+          </mat-grid-tile>
+        </mat-grid-list>
+      </mat-card> -->
+    </mat-card>
+  </div>
+</div>

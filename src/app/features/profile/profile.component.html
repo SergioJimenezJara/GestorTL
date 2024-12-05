@@ -1,0 +1,40 @@
+<div style="max-width: 400px; margin: 20px auto;">
+  <form [formGroup]="form" (ngSubmit)="submit()">
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Clase</mat-label>
+      <mat-select formControlName="class">
+        <mat-option *ngFor="let cls of classes" [value]="cls">{{ cls }}</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Arma Principal</mat-label>
+      <mat-select formControlName="mainWeapon">
+        <mat-option *ngFor="let weapon of weapons" [value]="weapon">
+          {{ weapon }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Arma Secundaria</mat-label>
+      <mat-select formControlName="secondaryWeapon">
+        <mat-option *ngFor="let weapon of weapons" [value]="weapon">
+          {{ weapon }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Combat Power</mat-label>
+      <input matInput type="number" formControlName="combatPower" />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>DKP</mat-label>
+      <input matInput type="text" formControlName="dkp" readonly />
+    </mat-form-field>
+
+    <button mat-raised-button color="primary" type="submit">Enviar</button>
+  </form>
+</div>
