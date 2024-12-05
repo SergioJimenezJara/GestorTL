@@ -13,7 +13,7 @@ import {
   ReactiveFormsModule,
 } from '@angular/forms';
 import { UtilsService } from '../../shared/utils.service';
-import { HOME_ROUTE } from '../../app.routes';
+import { HOME_ROUTE } from '../../shared/costants';
 
 @Component({
   selector: 'app-login',

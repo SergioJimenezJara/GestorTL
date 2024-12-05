@@ -39,7 +39,8 @@ export class ProfileComponent implements OnInit {
   initForm(){
     this.form = this.fb.group({
       class: [''],
-      weapons: [''],
+      mainWeapon: [''],
+      secondaryWeapon: [''],
       combatPower: [''],
       dkp: [{ value: '100', disabled: true }], // DKP de solo lectura
     });
